@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  /* for gradient */
+  --first: #6448fe;
+  --end: #600594;
+  /* primary */
+  --Red-input-errors: #ff5252;
+  --White: #ffffff;
+  --Light-grayish-violet: #dedddf;
+  --Dark-grayish-violet: #8e8593;
+  --Very-dark-violet: #21092f;
+}
+
+/* Reset */
+*,
+html {
+  padding:     0;
+  margin:      0;
+  box-sizing:  border-box;
+  font-family: "Space Grotesk", sans-serif;
+  font-size:   18px;
+  font-weight: 500;
+}
+
+body {
+  display: flex;
+  height:  100vh;
+}
+
+/* Purple part */
+.container_purple {
+  color:    var(--White);
+  width:    30vw;
+  position: relative; 
+}
+
+/* Front card */
+.front_card {
+  padding:          25px 25px;
+  display:          flex;
+  flex-direction:   column;
+  justify-content:  space-between;
+  border-radius:    10px;
+  width:            450px;
+  height:           245px;
+  background-image: url(images/bg-card-front.png);
+  background-size:  cover;
+  position:         absolute;
+  top:              15vh;
+  left:             7vw;
+}
+
+.logos {
+  display:        flex;
+  flex-direction: row;
+  gap:            10px;
+}
+
+ion-icon {
+  font-size: 36px;
+}
+
+.number_in_card {
+  padding-bottom: 30px;
+  font-size:      1.7rem;
+  letter-spacing: 2px;
+}
+
+.card_footer {
+  display:          flex;
+  text-transform:   uppercase;
+  letter-spacing:   3px;
+  justify-content:  space-between;
+}
+
+.card_footer p {
+  font-size: .9rem;
+}
+
+/* Back card */
+.back_card {
+  display:          flex;
+  justify-content:  flex-end;
+  align-items:      center;
+  width:            450px;
+  height:           245px;
+  background-image: url(images/bg-card-back.png);
+  background-size:  cover;
+  top:              54vh;
+  left:             50%;
+  position:         absolute;
+}
+
+.back_card p {
+  text-align:     right;
+  padding-right:  60px;
+  color:          var(--White);
+  letter-spacing: 2px;
+}
+/* Form part */
+.container {
+  padding-left:     10%;
+  width:            70vw;
+  display:          flex;          /* flex/none */
+  align-items:      center;
+  justify-content:  center;
+  background-color: var(--White);
+}
+
+form {
+  width:          450px;
+  display:        flex;
+  flex-direction: column;
+  gap:            25px;
+}
+
+.name, 
+.card_number {
+  display:        flex;
+  flex-direction: column;
+  gap:            5px;
+}
+
+label {
+  color:          var(--Very-dark-violet);
+  text-transform: uppercase;
+  font-size:      .7rem;
+  letter-spacing: 2px;
+  font-weight:    700;
+}
+
+.third_line {
+  display: flex;
+  gap:     15px;
+}
+
+.exp_date {
+  width:          50%;
+  display:        flex;
+  flex-direction: column;
+  gap:            5px;
+}
+
+.sec_number {
+  width:          50%;
+  display:        flex;
+  flex-direction: column;
+  gap:            5px;
+}
+
+.month_year_container {
+  display:  flex;
+  gap:      8px;
+}
+
+input {
+  padding-left:   18px;
+  height:         50px;
+  border-radius:  10px;
+  border:         1px solid var(--Light-grayish-violet);
+  cursor:         pointer;
+}
+
+input:focus {
+  border:   1px solid var(--Very-dark-violet);
+  outline:  none;
+}
+
+input::placeholder {
+  color: var(--Light-grayish-violet);
+}
+
+input.error {
+  border: 1px solid var(--Red-input-errors);
+}
+
+.month_year_container input {
+  width: 100px;
+}
+
+.cvc input {
+  width: 100%;
+}
+
+/* Button */
+button {
+  width:            100%;
+  border:           none;
+  height:           50px;
+  border-radius:    10px;
+  color:            var(--White);
+  background-color: var(--Very-dark-violet);
+  transition:       all .3s ease;
+  cursor:           pointer;
+}
+
+button:hover {
+  background: rgb(100,72,254);
+  background: linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
+}
+
+/* error's message */
+.number_error,
+.cvc_error,
+.date_error {
+  display:     none;                      /* block/none*/
+  color:       var(--Red-input-errors);
+  font-size:   .6rem;
+  font-weight: 800;
+}
+
+/* Complete state start*/
+.container_complete {
+  padding-left:     10%;
+  width:            70vw;
+  display:          none;           /* flex/none */
+  justify-content:  center;
+  align-items:      center;
+}
+
+.complete_msg {
+  width:          450px;
+  display:        flex;
+  flex-direction: column;
+  gap:            40px;
+  text-align:     center;
+}
+
+.logo_check ion-icon {
+  border-radius:  100vmax;
+  font-size:      80px;
+  color:          var(--White);
+  background:     rgb(100,72,254);
+  background:     linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
+}
+
+.thanks_container h1 {
+  font-size:      2rem;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  color:          var(--Very-dark-violet);
+}
+
+.thanks_container p {
+  color: var(--Dark-grayish-violet);
+}
+/* Complete state end */
+@media screen and (max-width: 1240px) {
+  .front_card {
+    top:  15vh;
+    left: 3vw;
+  }
+
+  .back_card {
+    top:  54vh;
+    left: 3vw;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  body {
+    flex-direction: column;
+    align-items:    center;
+    gap:            40px;
+  }
+
+  .container_purple {
+    width: 375px;
+  }
+
+  .back_card {
+    scale: .6;
+    top:   -20px;
+    left:  0;
+  }
+
+  .front_card {
+    z-index: 1;
+    scale:  .6;
+    top:    70px;
+    left:   -70px;
+  }
+
+  .container,
+  .container_complete {
+    width:          375px;
+    scale:          .8;
+    padding-inline: 0;
+  }
+}

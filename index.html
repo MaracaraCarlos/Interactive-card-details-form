@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Interactive card details form</title>
+
+  </head>
+  <body>
+
+    <div class="container_purple">
+      <picture>
+        <source srcset="images/bg-main-mobile.png" media="(max-width: 1020px)">
+        <img src="images/bg-main-desktop.png" alt="desktop">
+      </picture>
+      <div class="front_card">
+        <div class="logos">
+          <div class="logo_paypal">
+            <ion-icon name="logo-paypal"></ion-icon>
+          </div>
+          <div class="logo_amazon">
+            <ion-icon name="logo-amazon"></ion-icon>
+          </div>
+        </div>
+        <div class="info_front_card">
+          <p class="number_in_card">0000 0000 0000 0000</p>
+          <div class="card_footer">
+            <p class="name_in_card">Jane Appleseed</p>
+            <p class="date_in_card"><span class="month_in_card">00</span>/<span class="year_in_card">00</span></p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="back_card">
+        <p class="cvc_in_card">000</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <form>
+        <div class="name">
+          <label for="cardholder">Cardholder Name</label>
+          <input id="cardholder" type="text" placeholder="e.g. Jane Appleseed">
+        </div>
+        <div class="card_number">
+          <label for="card_number">Card Number</label>
+          <input id="card_number" type="text" placeholder="e.g. 1234 5678 9123 0000">
+          <p class="number_error">Wrong format, numbers only</p>
+        </div>
+        <div class="third_line">
+          <div class="exp_date">
+            <label for="month">Exp. Date (MM/YY)</label>
+            <div class="month_year_container">
+              <input id="month" type="text" placeholder="MM" maxlength="2">
+              <input id="year" type="text" placeholder="YY" maxlength="2">
+            </div>
+            <p class="date_error">Cant't be blank</p>
+          </div>
+          <div class="sec_number">
+            <label for="cvc">CVC</label>
+            <input id="cvc" type="text" placeholder="e.g. 123" maxlength="3">
+            <p class="cvc_error">Can't be blank</p>
+          </div>
+        </div>
+        <div class="confirm_btn">
+          <button id="confirm_btn">Confirm</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Completed state start -->
+    <div class="container_complete">
+      <div class="complete_msg">
+        <div class="logo_check">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+        <div class="thanks_container">
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+        </div>
+        <div class="continue_btn">
+          <button id="continue_btn">Continue</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
